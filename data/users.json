@@ -1,0 +1,32 @@
+[
+  {
+    "uid": "3751375336",
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "email": "juan.perez@iteso.mx",
+    "password": "ImpossibleToHack",
+    "date": "1980-10-10",
+    "sex": "H",
+    "image": "https://randomuser.me/api/portraits/men/62.jpg"
+  },
+  {
+    "uid": "5777094844",
+    "firstName": "Diego",
+    "lastName": "Lopez",
+    "email": "diego.lopez@iteso.mx",
+    "password": "BestPassword",
+    "date": "1993-02-06",
+    "sex": "H",
+    "image": "https://randomuser.me/api/portraits/men/18.jpg"
+  },
+  {
+    "uid": "9821882335",
+    "firstName": "Diana",
+    "lastName": "Gomez",
+    "email": "diana.gomez@iteso.mx",
+    "password": "pass1234",
+    "date": "1991-12-08",
+    "sex": "M",
+    "image": "https://randomuser.me/api/portraits/women/19.jpg"
+  }
+]
