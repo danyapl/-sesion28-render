@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administracion de usuarios</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    h1 { font-size: 26px; }
+
+    button {
+      padding: 12px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .usuario {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 15px 0;
+      padding: 16px;
+      overflow-wrap: anywhere;
+    }
+
+    .usuario img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+    }
+
+    input, select {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      margin-top: 4px;
+    }
+
+    dialog {
+      width: 85%;
+      max-width: 420px;
+      max-height: 85vh;
+      overflow: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #status { min-height: 24px; }
+  </style>
+</head>
+
+<body>
+  <h1>Administracion de usuarios</h1>
+  <p>Ejercicio de la sesion 21 publicado en Render.</p>
+
+  <button type="button" onclick="addUser(ximenaUser)">
+    Agregar a Ximena
+  </button>
+
+  <button type="button" onclick="displayUsers()">
+    Actualizar lista
+  </button>
+
+  <p id="status" role="status"></p>
+  <main id="userList"></main>
+
+  <dialog id="editModal">
+    <form id="editForm">
+      <h2>Editar usuario</h2>
+
+      <input type="hidden" id="emailEditModal">
+
+      <label for="firstName">Nombre</label>
+      <input id="firstName" required>
+
+      <label for="lastName">Apellido</label>
+      <input id="lastName" required>
+
+      <label for="userDate">Fecha de nacimiento</label>
+      <input type="date" id="userDate" required>
+
+      <label for="userSex">Sexo</label>
+      <select id="userSex">
+        <option value="H">Hombre</option>
+        <option value="M">Mujer</option>
+      </select>
+
+      <label for="userUrl">URL de imagen</label>
+      <input type="url" id="userUrl">
+
+      <button type="submit">Guardar cambios</button>
+      <button type="button"
+        onclick="document.getElementById('editModal').close()">
+        Cancelar
+      </button>
+    </form>
+  </dialog>
+
+  <dialog id="deleteModal">
+    <h2>Eliminar usuario</h2>
+    <p>¿Confirmas que quieres eliminar este usuario?</p>
+
+    <input type="hidden" id="emailDeleteModal">
+
+    <button type="button" onclick="removeUser()">
+      Eliminar
+    </button>
+
+    <button type="button"
+      onclick="document.getElementById('deleteModal').close()">
+      Cancelar
+    </button>
+  </dialog>
+
+  <script src="/ajax_handler.js"></script>
+  <script src="/user_utils.js"></script>
+  <script src="/index.js"></script>
+</body>
+</html>
